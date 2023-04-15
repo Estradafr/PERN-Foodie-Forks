@@ -11,7 +11,11 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Routes
+// Controllers
+const recipesController = require('./controllers/recipes_controller');
+app.use('/api/recipes', recipesController);
+
+// Listen
 app.listen(9001, () => {
   console.log(`PORT: ${9001}`);
 });
